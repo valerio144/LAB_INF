@@ -1,0 +1,3 @@
+/Users/valeriomartino/Desktop/LAB_PROG TRANSAZIONI FINANZIARIE/cmake-build-debug/CMakeFiles/LAB_PROG_TRANSAZIONI_FINANZIARIE.dir
+/Users/valeriomartino/Desktop/LAB_PROG TRANSAZIONI FINANZIARIE/cmake-build-debug/CMakeFiles/edit_cache.dir
+/Users/valeriomartino/Desktop/LAB_PROG TRANSAZIONI FINANZIARIE/cmake-build-debug/CMakeFiles/rebuild_cache.dir
