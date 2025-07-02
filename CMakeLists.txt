@@ -1,13 +1,14 @@
-cmake_minimum_required(VERSION 3.29)
-project(LAB_PROG_TRANSAZIONI_FINANZIARIE)
+cmake_minimum_required(VERSION 3.14)
 
-set(CMAKE_CXX_STANDARD 20)
+project(ContoTransazioni)
 
-add_executable(LAB_PROG_TRANSAZIONI_FINANZIARIE src/main.cpp
-        src/transazione.cpp
-        src/transazione.h
-        src/conto.cpp
-        src/conto.h
-        test/test_transazione.cpp
-        test/test_conto.cpp
-)
+set(CMAKE_CXX_STANDARD 17)
+
+# Abilita il supporto alla funzione "enable_testing()" (necessario per GoogleTest)
+enable_testing()
+
+# Aggiunge la sotto-directory "src" e "test"
+add_subdirectory(src)
+add_subdirectory(test)
+
+

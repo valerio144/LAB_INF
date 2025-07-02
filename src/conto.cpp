@@ -2,9 +2,9 @@
 #include <fstream>
 #include <sstream>
 
-Conto::Conto() : saldo_(0.0) {}
+Conto::Conto() : saldo_(0.0) {};
 
-void Conto::aggiungiTransazione(const Transazione& transazione) {
+void Conto::aggiungiTransazione(const Transazione & transazione) {
     transazioni_.push_back(transazione);
     saldo_ += transazione.getImporto();
 }
@@ -23,39 +23,36 @@ const std::vector<Transazione>& Conto::getTransazioni() const {
 
 bool Conto::salvaSuFile(const std::string& filename) const {
     std::ofstream file(filename);
-    if (!file.is_open()) return false;
+    if (!file.is_open()) return false; // se il file non si apre
 
-    for (const auto& t : transazioni_) {
-        file << t.getTimestamp() << ";" << t.getImporto() << ";" << t.getDescrizione() << "\n";
+    for (const auto& t : transazioni_) { // scrive tutte le transazioni sul file
+        file << t.getImporto() << ";" << t.getDescrizione() << "\n";
     }
-
     file.close();
     return true;
 }
 
+// Legge le transazioni da un file di testo e le carica dentro il programma
 bool Conto::caricaDaFile(const std::string& filename) {
     std::ifstream file(filename);
-    if (!file.is_open()) return false;
+    if (!file.is_open()) return false; // Se il file non esiste o non può essere aperto
 
     transazioni_.clear();
     saldo_ = 0.0;
 
-    std::string linea;
-    while (std::getline(file, linea)) {
-        std::istringstream iss(linea);
-        std::string ts_str, imp_str, desc;
+    std::string linea; // Variabile che conterrà ogni riga letta dal file
+    while (std::getline(file, linea)) { // riga per riga
+        std::istringstream iss(linea); // Serve per analizzare la riga come se fosse un piccolo file ISS = variabile
+        std::string imp_str, desc; // imp_str = importo, desc = descrizione
 
-        if (!std::getline(iss, ts_str, ';')) continue;
-        if (!std::getline(iss, imp_str, ';')) continue;
-        if (!std::getline(iss, desc)) continue;
+        if (!std::getline(iss, imp_str, ';')) continue; // Legge da iss fino al punto e virgola ;, e lo mette in imp_str
+        if (!std::getline(iss, desc)) continue; // Legge il resto della riga dopo il ; e lo salva in desc
 
-        std::time_t ts = std::stoll(ts_str);
-        double importo = std::stod(imp_str);
-
-        Transazione t(importo, desc, ts);
+        double importo = std::stod(imp_str); // Converte l'importo da stringa a numero
+        Transazione t(importo, desc); // Crea un oggetto Transazione
         aggiungiTransazione(t);
     }
-
     file.close();
     return true;
 }
+

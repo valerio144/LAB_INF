@@ -1,7 +1,7 @@
 #include "transazione.h"
 
-Transazione::Transazione(double importo, const std::string& descrizione, std::time_t timestamp)
-    : importo_(importo), descrizione_(descrizione), timestamp_(timestamp) {}
+Transazione::Transazione(double importo, const std::string& descrizione)
+    : importo_(importo), descrizione_(descrizione) {}
 
 double Transazione::getImporto() const {
     return importo_;
@@ -9,8 +9,4 @@ double Transazione::getImporto() const {
 
 std::string Transazione::getDescrizione() const {
     return descrizione_;
-}
-
-std::time_t Transazione::getTimestamp() const {
-    return timestamp_;
 }

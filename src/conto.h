@@ -11,16 +11,18 @@ public:
 
     void aggiungiTransazione(const Transazione& transazione);
     double getSaldo() const;
-    size_t getNumeroTransazioni() const;
+    size_t getNumeroTransazioni() const; // intero senza segno perche -5 nn ha senso
 
     bool salvaSuFile(const std::string& filename) const;
     bool caricaDaFile(const std::string& filename);
 
-    const std::vector<Transazione>& getTransazioni() const;
+    const std::vector<Transazione> & getTransazioni() const;
 
 private:
     std::vector<Transazione> transazioni_;
-    double saldo_;
+    double saldo_; // variabile del saldo
 };
 
 #endif // CONTO_H
+
+
