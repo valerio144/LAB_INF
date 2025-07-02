@@ -1,0 +1,7 @@
+add_test([=[ContoTest.AggiuntaTransazioni]=]  /Users/valeriomartino/Desktop/LAB_INF/cmake-build-debug/test/tests [==[--gtest_filter=ContoTest.AggiuntaTransazioni]==] --gtest_also_run_disabled_tests)
+set_tests_properties([=[ContoTest.AggiuntaTransazioni]=]  PROPERTIES WORKING_DIRECTORY /Users/valeriomartino/Desktop/LAB_INF/cmake-build-debug/test SKIP_REGULAR_EXPRESSION [==[\[  SKIPPED \]]==])
+add_test([=[ContoTest.SalvataggioECaricamento]=]  /Users/valeriomartino/Desktop/LAB_INF/cmake-build-debug/test/tests [==[--gtest_filter=ContoTest.SalvataggioECaricamento]==] --gtest_also_run_disabled_tests)
+set_tests_properties([=[ContoTest.SalvataggioECaricamento]=]  PROPERTIES WORKING_DIRECTORY /Users/valeriomartino/Desktop/LAB_INF/cmake-build-debug/test SKIP_REGULAR_EXPRESSION [==[\[  SKIPPED \]]==])
+add_test([=[TransazioneTest.CostruttoreEGetter]=]  /Users/valeriomartino/Desktop/LAB_INF/cmake-build-debug/test/tests [==[--gtest_filter=TransazioneTest.CostruttoreEGetter]==] --gtest_also_run_disabled_tests)
+set_tests_properties([=[TransazioneTest.CostruttoreEGetter]=]  PROPERTIES WORKING_DIRECTORY /Users/valeriomartino/Desktop/LAB_INF/cmake-build-debug/test SKIP_REGULAR_EXPRESSION [==[\[  SKIPPED \]]==])
+set(  tests_TESTS ContoTest.AggiuntaTransazioni ContoTest.SalvataggioECaricamento TransazioneTest.CostruttoreEGetter)

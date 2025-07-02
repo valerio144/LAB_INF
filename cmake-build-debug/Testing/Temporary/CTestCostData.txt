@@ -1,0 +1,7 @@
+ContoTest.AggiungiTransazioniESaldo 17 0.00182586
+ContoTest.SalvaECarica 17 0.00042188
+TransazioneTest.CreazioneEDati 17 0.000370534
+ContoTest.AggiuntaTransazioni 22 0.000348646
+ContoTest.SalvataggioECaricamento 22 0.000343424
+TransazioneTest.CostruttoreEGetter 22 0.00030089
+---
